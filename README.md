@@ -16,24 +16,43 @@ Project structure
 Our goal was to create a legible project which handles every aspect of CNN creation and training. The code is organized as follows :
 
 ├── launcher.py
+
 ├── transfer_learning.py
+
 ├── video_annotation.py
+
 ├── evaluate_model.py
+
 ├── transfer_learned_model.h5
+
 ├── setup/
+
 │   ├── setup_datasets.py
+
 │   └── naive_approach.py
+
 ├── notebooks/
+
 │   ├── datasets_analysis.ipynb
+
 │   └── performance_analysis.ipynb
+
 ├── custom_model/
+
 │   ├── cladoh.py
+
 │   ├── model_train_test.py
+
 │   └── model_train_tester.py
-├── video_examples/
+
+├── video_examples
+
 │   ├── video_0.gif
+
 │   ├── video_1.gif
+
 │   ├── video_2.gif
+
 │   └── video_3.gif
 
 The datasets can be setup using functions defines in setup_datasets.py. The model we used which performs transfer learning from InceptionV3 is defined in transfer_learning.py, this module contains a function that defines a batch generator which performs data augmentation. The training process is also handled in this file, with the possibility of freezing layers and adapting the learning rate for fine-tuning. Modules video_annotation.py allows to annotate a video with predictions from our CNN and evaluate_model.py allows us to evaluate our model and mine difficult examples for the network.
